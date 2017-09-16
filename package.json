@@ -1,11 +1,11 @@
 {
-  "name": "JsProjectNodeJs",
+  "name": "JsProjectServerClient",
   "description": "Pagina de cuentos",
   "version": "1.0.0",
   "main": "app.js",
   
   "engines": {
-    "node": "6.0.0",
+    "node": "8.4.0",
     "npm": "5.4.1"
   },
   "dependencies": {

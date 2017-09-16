@@ -202,14 +202,14 @@ $("#guardar").click(function () {
        
     };
         $.ajax({
-            url: '/guardarCuento',
+            url: 'https://jsprojectrestserver.herokuapp.com/guardarCuento',
             type: 'POST',
             data: cuento,
             cache: false,
           
             success: function (data) {
                  $.ajax({
-                        url: '/ultimoid',
+                        url: 'https://jsprojectrestserver.herokuapp.com/ultimoid',
                         method: 'GET',
 
                         success: function (data) {
@@ -1277,7 +1277,7 @@ function eliminarCuento(btn) {
 function leerUsuarios() {
      var datos="";
      $.ajax({
-        url: '/listarUsuarios',
+        url: 'http://jsprojectrestserver.herokuapp.com/listarUsuarios',
         type: 'GET',
        
         cache: false,
@@ -1300,9 +1300,9 @@ function leerUsuarios() {
                });
         },
         //si ha ocurrido un error
-        error: function () {
+        error: function (data) {
             console.log("error");
-             alert("eror"); 
+             alert("eror"+ data); 
            
         }
     });
