@@ -896,7 +896,17 @@ function leerCuento() {
             
             //console.log(data);
             datos=data;
-             alert("Disfruta de todos los cuentos!" + datos);
+        },
+        //si ha ocurrido un error
+        error: function () {
+            console.log("error");
+           
+        }
+    });
+    
+    
+    
+    alert("Disfruta de todos los cuentos!" + datos);
    
     //<img id='imghome' src='" + elem.pagina[0].imagen + "' alt=''>\
     $.each(datos, function (index, elem) {
@@ -933,17 +943,6 @@ function leerCuento() {
         });
         
     });
-        },
-        //si ha ocurrido un error
-        error: function () {
-            console.log("error");
-           
-        }
-    });
-    
-    
-    
-   
   
 };
 
