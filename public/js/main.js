@@ -224,7 +224,7 @@ $("#guardar").click(function () {
                                     }
 
                                   $.ajax({
-                                        url: '/insertarImg',
+                                        url: 'https://jsprojectrestserver.herokuapp.com/insertarImg',
                                         method: 'POST',
                                         data: params,
                                         success: function (data) {
@@ -246,7 +246,7 @@ $("#guardar").click(function () {
                                     }
 
                                   $.ajax({
-                                        url: '/guardarPregunta',
+                                        url: 'https://jsprojectrestserver.herokuapp.com/guardarPregunta',
                                         method: 'POST',
                                         data: params,
                                         success: function (data) {
@@ -522,7 +522,7 @@ $('.subirImg').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -564,7 +564,7 @@ $('.subirAudio').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -606,7 +606,7 @@ $('.subirAudioP').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -645,7 +645,7 @@ $('.subirAudioP2').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -687,7 +687,7 @@ $('.subirImgP').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -725,7 +725,7 @@ $('.subirImgP2').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -762,7 +762,7 @@ $('.subirImg2P').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -800,7 +800,7 @@ $('.subirImg2P2').click(function () {
     var message = "";
     //hacemos la petición ajax  
     $.ajax({
-        url: '/subir',
+        url: 'https://jsprojectrestserver.herokuapp.com/subir',
         type: 'POST',
         // Form data
         //datos del formulario
@@ -887,7 +887,7 @@ function leerCuento() {
         idusuario : numero
      }
      $.ajax({
-        url: '/listarCuentoPorUsuario',
+        url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorUsuario',
         type: 'POST',
         data: params,
         cache: false,
@@ -914,7 +914,7 @@ function leerCuento() {
         var datosidcuento=elem.idcuento;
      
         $.ajax({
-            url: '/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
             type: 'POST',
             data: elem,
             cache: false,
@@ -954,7 +954,7 @@ function editarCuento(){
     var elem = {idcuento: j} 
    
     $.ajax({
-            url: '/listarCuentoPorId',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
             type: 'POST',
             data: elem,
             cache: false,
@@ -975,7 +975,7 @@ function editarCuento(){
     
     
      $.ajax({
-            url: '/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1017,7 +1017,7 @@ function editarCuento(){
                 //EDITAR PREGUNTAS
                     
                     $.ajax({
-                        url: '/listarPreguntas',
+                        url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
                         type: 'POST',
                         data: elem,
                         cache: false,
@@ -1111,7 +1111,7 @@ function guardarEditar(){
        
     
         $.ajax({
-            url: '/editarCuento',
+            url: 'https://jsprojectrestserver.herokuapp.com/editarCuento',
             type: 'POST',
             data: params,
             cache: false,
@@ -1119,13 +1119,13 @@ function guardarEditar(){
             success: function (data) {
                 //alert("se editoooo");
                          $.ajax({
-                                url: '/eliminarPaginasPorCuento',
+                                url: 'https://jsprojectrestserver.herokuapp.com/eliminarPaginasPorCuento',
                                 method: 'POST',
                                 data: params,
                                 success: function (data) {
                                     console.log("borro paginas");
                                     $.ajax({
-                                            url: '/eliminarPreguntasPorCuento',
+                                            url: 'https://jsprojectrestserver.herokuapp.com/eliminarPreguntasPorCuento',
                                             method: 'POST',
                                             data: params,
                                             success: function (data) {
@@ -1141,7 +1141,7 @@ function guardarEditar(){
                                                         }
 
                                                       $.ajax({
-                                                            url: '/insertarImg',
+                                                            url: 'https://jsprojectrestserver.herokuapp.com/insertarImg',
                                                             method: 'POST',
                                                             data: params,
                                                             success: function (data) {
@@ -1165,7 +1165,7 @@ function guardarEditar(){
                                                             }
 
                                                           $.ajax({
-                                                                url: '/guardarPregunta',
+                                                                url: 'https://jsprojectrestserver.herokuapp.com/guardarPregunta',
                                                                 method: 'POST',
                                                                 data: params,
                                                                 success: function (data) {
@@ -1220,7 +1220,7 @@ function eliminarCuento(btn) {
    
     
     $.ajax({
-            url: '/eliminarPaginasPorCuento',
+            url: 'https://jsprojectrestserver.herokuapp.com/eliminarPaginasPorCuento',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1229,7 +1229,7 @@ function eliminarCuento(btn) {
             
                    //alert("Se ha eliminado las paginas");
                     $.ajax({
-                        url: '/eliminarPreguntasPorCuento',
+                        url: 'https://jsprojectrestserver.herokuapp.com/eliminarPreguntasPorCuento',
                         type: 'POST',
                         data: elem,
                         cache: false,
@@ -1238,7 +1238,7 @@ function eliminarCuento(btn) {
 
                             //alert("Se ha eliminado las preguntas");
                             $.ajax({
-                                url: '/eliminarCuento',
+                                url: 'https://jsprojectrestserver.herokuapp.com/eliminarCuento',
                                 type: 'POST',
                                 data: elem,
                                 cache: false,
@@ -1329,7 +1329,7 @@ function guardarUsuario() {
     } 
     
      $.ajax({
-        url: '/GuardarUsuario',
+        url: 'https://jsprojectrestserver.herokuapp.com/GuardarUsuario',
         type: 'POST',
        data: params,
         cache: false,
@@ -1360,7 +1360,7 @@ function recibirCuento() {
     var elem = {idcuento: j} //Variable transformada en objeto para enviarla en data
 
     $.ajax({
-            url: '/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1397,7 +1397,7 @@ function recibirCuento() {
         });
     
     $.ajax({
-            url: '/listarCuentoPorId',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1415,7 +1415,7 @@ function recibirCuento() {
             }
         });
      $.ajax({
-            url: '/listarPreguntas',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1474,7 +1474,7 @@ function recibirUsuario() {
     var elem = {idusuario: j} //Variable transformada en objeto para enviarla en data
     
     $.ajax({
-            url: '/mostrarUsuario',
+            url: 'https://jsprojectrestserver.herokuapp.com/mostrarUsuario',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1502,7 +1502,7 @@ function actualizarUsuario() {
     var elem = {idusuario: j,usuario:$("#usuario").val(),pass:$("#pass").val(),nombre:$("#nombre").val()} //Variable transformada en objeto para enviarla en data
     
        $.ajax({
-            url: '/actualizarUsuario',
+            url: 'https://jsprojectrestserver.herokuapp.com/actualizarUsuario',
             type: 'POST',
             data: elem,
             cache: false,
@@ -1527,7 +1527,7 @@ function eliminarUsuario() {
     var j = localStorage.getItem("var")
     var elem = {idusuario: j} //Variable transformada en objeto para enviarla en data
      $.ajax({
-            url: '/eliminarUsuario',
+            url: 'https://jsprojectrestserver.herokuapp.com/eliminarUsuario',
             type: 'POST',
             data: elem,
             cache: false,
