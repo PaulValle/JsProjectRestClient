@@ -888,7 +888,7 @@ function leerCuento() {
      }
      $.ajax({
         url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorUsuario',
-        type: 'POST',
+        type: 'GET',
         data: params,
         cache: false,
        
@@ -896,17 +896,7 @@ function leerCuento() {
             
             //console.log(data);
             datos=data;
-        },
-        //si ha ocurrido un error
-        error: function () {
-            console.log("error");
-           
-        }
-    });
-    
-    
-    
-    alert("Disfruta de todos los cuentos!" + datos);
+             alert("Disfruta de todos los cuentos!" + datos);
    
     //<img id='imghome' src='" + elem.pagina[0].imagen + "' alt=''>\
     $.each(datos, function (index, elem) {
@@ -915,7 +905,7 @@ function leerCuento() {
      
         $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
           
@@ -943,6 +933,17 @@ function leerCuento() {
         });
         
     });
+        },
+        //si ha ocurrido un error
+        error: function () {
+            console.log("error");
+           
+        }
+    });
+    
+    
+    
+   
   
 };
 
@@ -955,7 +956,7 @@ function editarCuento(){
    
     $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
 
@@ -976,7 +977,7 @@ function editarCuento(){
     
      $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
           
@@ -1018,7 +1019,7 @@ function editarCuento(){
                     
                     $.ajax({
                         url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
-                        type: 'POST',
+                        type: 'GET',
                         data: elem,
                         cache: false,
 
@@ -1112,7 +1113,7 @@ function guardarEditar(){
     
         $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/editarCuento',
-            type: 'POST',
+            type: 'PUT',
             data: params,
             cache: false,
           
@@ -1120,13 +1121,13 @@ function guardarEditar(){
                 //alert("se editoooo");
                          $.ajax({
                                 url: 'https://jsprojectrestserver.herokuapp.com/eliminarPaginasPorCuento',
-                                method: 'POST',
+                                method: 'DELETE',
                                 data: params,
                                 success: function (data) {
                                     console.log("borro paginas");
                                     $.ajax({
                                             url: 'https://jsprojectrestserver.herokuapp.com/eliminarPreguntasPorCuento',
-                                            method: 'POST',
+                                            method: 'DELETE',
                                             data: params,
                                             success: function (data) {
                                                 console.log("borro preguntas");
@@ -1221,7 +1222,7 @@ function eliminarCuento(btn) {
     
     $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/eliminarPaginasPorCuento',
-            type: 'POST',
+            type: 'DELETE',
             data: elem,
             cache: false,
           
@@ -1230,7 +1231,7 @@ function eliminarCuento(btn) {
                    //alert("Se ha eliminado las paginas");
                     $.ajax({
                         url: 'https://jsprojectrestserver.herokuapp.com/eliminarPreguntasPorCuento',
-                        type: 'POST',
+                        type: 'DELETE',
                         data: elem,
                         cache: false,
 
@@ -1239,7 +1240,7 @@ function eliminarCuento(btn) {
                             //alert("Se ha eliminado las preguntas");
                             $.ajax({
                                 url: 'https://jsprojectrestserver.herokuapp.com/eliminarCuento',
-                                type: 'POST',
+                                type: 'DELETE',
                                 data: elem,
                                 cache: false,
 
@@ -1361,7 +1362,7 @@ function recibirCuento() {
 
     $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
           
@@ -1398,7 +1399,7 @@ function recibirCuento() {
     
     $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
 
@@ -1416,7 +1417,7 @@ function recibirCuento() {
         });
      $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
           
@@ -1475,7 +1476,7 @@ function recibirUsuario() {
     
     $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/mostrarUsuario',
-            type: 'POST',
+            type: 'GET',
             data: elem,
             cache: false,
           
@@ -1503,7 +1504,7 @@ function actualizarUsuario() {
     
        $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/actualizarUsuario',
-            type: 'POST',
+            type: 'PUT',
             data: elem,
             cache: false,
           
@@ -1528,7 +1529,7 @@ function eliminarUsuario() {
     var elem = {idusuario: j} //Variable transformada en objeto para enviarla en data
      $.ajax({
             url: 'https://jsprojectrestserver.herokuapp.com/eliminarUsuario',
-            type: 'POST',
+            type: 'DELETE',
             data: elem,
             cache: false,
           
