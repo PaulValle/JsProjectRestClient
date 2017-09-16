@@ -1277,7 +1277,7 @@ function eliminarCuento(btn) {
 function leerUsuarios() {
      var datos="";
      $.ajax({
-        url: 'http://jsprojectrestserver.herokuapp.com/listarUsuarios',
+        url: 'https://jsprojectrestserver.herokuapp.com/listarUsuarios',
         type: 'GET',
        
         cache: false,
