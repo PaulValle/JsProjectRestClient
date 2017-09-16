@@ -887,7 +887,7 @@ function leerCuento() {
         idusuario : numero
      }
      $.ajax({
-        url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorUsuario',
+        url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorUsuario/'+params.idusuario,
         type: 'GET',
         data: params,
         cache: false,
@@ -914,7 +914,7 @@ function leerCuento() {
         var datosidcuento=elem.idcuento;
      
         $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg/'+datosidcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -954,7 +954,7 @@ function editarCuento(){
     var elem = {idcuento: j} 
    
     $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId/'+elem.idcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -975,7 +975,7 @@ function editarCuento(){
     
     
      $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg/'+elem.idcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -1017,7 +1017,7 @@ function editarCuento(){
                 //EDITAR PREGUNTAS
                     
                     $.ajax({
-                        url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
+                        url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas/'+elem.idcuento,
                         type: 'GET',
                         data: elem,
                         cache: false,
@@ -1360,7 +1360,7 @@ function recibirCuento() {
     var elem = {idcuento: j} //Variable transformada en objeto para enviarla en data
 
     $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarImg',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarImg/'+elem.idcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -1397,7 +1397,7 @@ function recibirCuento() {
         });
     
     $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarCuentoPorId/'+elem.idcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -1415,7 +1415,7 @@ function recibirCuento() {
             }
         });
      $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas',
+            url: 'https://jsprojectrestserver.herokuapp.com/listarPreguntas/'+elem.idcuento,
             type: 'GET',
             data: elem,
             cache: false,
@@ -1474,7 +1474,7 @@ function recibirUsuario() {
     var elem = {idusuario: j} //Variable transformada en objeto para enviarla en data
     
     $.ajax({
-            url: 'https://jsprojectrestserver.herokuapp.com/mostrarUsuario',
+            url: 'https://jsprojectrestserver.herokuapp.com/mostrarUsuario/'+elem.idusuario,
             type: 'GET',
             data: elem,
             cache: false,
